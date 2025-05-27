@@ -129,7 +129,7 @@
             // 
             // button1
             // 
-            button1.Location = new Point(14, 246);
+            button1.Location = new Point(12, 246);
             button1.Name = "button1";
             button1.Size = new Size(220, 29);
             button1.TabIndex = 2;
@@ -250,9 +250,9 @@
             // 
             // ver
             // 
-            ver.Location = new Point(12, 12);
+            ver.Location = new Point(707, 246);
             ver.Name = "ver";
-            ver.Size = new Size(149, 29);
+            ver.Size = new Size(171, 29);
             ver.TabIndex = 17;
             ver.Text = "Actualizar Inventario";
             ver.UseVisualStyleBackColor = true;

@@ -142,8 +142,9 @@ namespace Inventario
 
                 //dataGridView1.Rows.Add(String.Format("{0}", reader[0], reader[1], reader[2], reader[3], reader[4], reader[5], reader[6]));
                 //dataGridView1.Rows[dataGridView1.Rows.Count - 1].Cells[0].Value = dataGridView1.Rows.Count;
-                con.Close();
             }
+            con.Close();
+
         }
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
