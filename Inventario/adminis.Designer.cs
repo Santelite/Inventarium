@@ -29,6 +29,13 @@
         private void InitializeComponent()
         {
             dataGridView1 = new DataGridView();
+            id_producto = new DataGridViewTextBoxColumn();
+            nombre = new DataGridViewTextBoxColumn();
+            descripcion = new DataGridViewTextBoxColumn();
+            Existencia = new DataGridViewTextBoxColumn();
+            Ventas = new DataGridViewTextBoxColumn();
+            precons = new DataGridViewTextBoxColumn();
+            prepro = new DataGridViewTextBoxColumn();
             textBox1 = new TextBox();
             button1 = new Button();
             textBox2 = new TextBox();
@@ -42,17 +49,75 @@
             label6 = new Label();
             textBox5 = new TextBox();
             textBox6 = new TextBox();
+            actualizar = new Button();
+            elim = new Button();
+            ver = new Button();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             SuspendLayout();
             // 
             // dataGridView1
             // 
+            dataGridView1.AllowUserToAddRows = false;
+            dataGridView1.AllowUserToDeleteRows = false;
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridView1.Columns.AddRange(new DataGridViewColumn[] { id_producto, nombre, descripcion, Existencia, Ventas, precons, prepro });
             dataGridView1.Location = new Point(12, 292);
             dataGridView1.Name = "dataGridView1";
             dataGridView1.RowHeadersWidth = 51;
             dataGridView1.Size = new Size(866, 188);
             dataGridView1.TabIndex = 0;
+            dataGridView1.CellContentClick += dataGridView1_CellContentClick;
+            // 
+            // id_producto
+            // 
+            id_producto.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+            id_producto.HeaderText = "ID del Prod.";
+            id_producto.MinimumWidth = 6;
+            id_producto.Name = "id_producto";
+            id_producto.Width = 107;
+            // 
+            // nombre
+            // 
+            nombre.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+            nombre.HeaderText = "Nombre";
+            nombre.MinimumWidth = 6;
+            nombre.Name = "nombre";
+            nombre.Width = 93;
+            // 
+            // descripcion
+            // 
+            descripcion.HeaderText = "Descripción";
+            descripcion.MinimumWidth = 6;
+            descripcion.Name = "descripcion";
+            descripcion.Width = 125;
+            // 
+            // Existencia
+            // 
+            Existencia.HeaderText = "Existencia";
+            Existencia.MinimumWidth = 6;
+            Existencia.Name = "Existencia";
+            Existencia.Width = 125;
+            // 
+            // Ventas
+            // 
+            Ventas.HeaderText = "Ventas";
+            Ventas.MinimumWidth = 6;
+            Ventas.Name = "Ventas";
+            Ventas.Width = 125;
+            // 
+            // precons
+            // 
+            precons.HeaderText = "Precio al Consumidor";
+            precons.MinimumWidth = 6;
+            precons.Name = "precons";
+            precons.Width = 125;
+            // 
+            // prepro
+            // 
+            prepro.HeaderText = "Precio del Proveedor";
+            prepro.MinimumWidth = 6;
+            prepro.Name = "prepro";
+            prepro.Width = 125;
             // 
             // textBox1
             // 
@@ -134,7 +199,7 @@
             // label5
             // 
             label5.AutoSize = true;
-            label5.Location = new Point(357, 147);
+            label5.Location = new Point(357, 119);
             label5.Name = "label5";
             label5.Size = new Size(102, 20);
             label5.TabIndex = 11;
@@ -143,7 +208,7 @@
             // label6
             // 
             label6.AutoSize = true;
-            label6.Location = new Point(312, 180);
+            label6.Location = new Point(312, 151);
             label6.Name = "label6";
             label6.Size = new Size(147, 20);
             label6.TabIndex = 12;
@@ -151,23 +216,56 @@
             // 
             // textBox5
             // 
-            textBox5.Location = new Point(465, 144);
+            textBox5.Location = new Point(465, 115);
             textBox5.Name = "textBox5";
             textBox5.Size = new Size(125, 27);
             textBox5.TabIndex = 13;
             // 
             // textBox6
             // 
-            textBox6.Location = new Point(465, 177);
+            textBox6.Location = new Point(465, 148);
             textBox6.Name = "textBox6";
             textBox6.Size = new Size(125, 27);
             textBox6.TabIndex = 14;
+            // 
+            // actualizar
+            // 
+            actualizar.Location = new Point(264, 246);
+            actualizar.Name = "actualizar";
+            actualizar.Size = new Size(195, 29);
+            actualizar.TabIndex = 15;
+            actualizar.Text = "Actualizar Producto";
+            actualizar.UseVisualStyleBackColor = true;
+            actualizar.Click += actualizar_Click;
+            // 
+            // elim
+            // 
+            elim.Location = new Point(498, 246);
+            elim.Name = "elim";
+            elim.Size = new Size(177, 29);
+            elim.TabIndex = 16;
+            elim.Text = "Eliminar ID Prod.";
+            elim.UseVisualStyleBackColor = true;
+            elim.Click += elim_Click;
+            // 
+            // ver
+            // 
+            ver.Location = new Point(12, 12);
+            ver.Name = "ver";
+            ver.Size = new Size(149, 29);
+            ver.TabIndex = 17;
+            ver.Text = "Actualizar Inventario";
+            ver.UseVisualStyleBackColor = true;
+            ver.Click += ver_Click;
             // 
             // adminis
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(890, 492);
+            Controls.Add(ver);
+            Controls.Add(elim);
+            Controls.Add(actualizar);
             Controls.Add(textBox6);
             Controls.Add(textBox5);
             Controls.Add(label6);
@@ -206,5 +304,15 @@
         private Label label6;
         private TextBox textBox5;
         private TextBox textBox6;
+        private Button actualizar;
+        private Button elim;
+        private Button ver;
+        private DataGridViewTextBoxColumn id_producto;
+        private DataGridViewTextBoxColumn nombre;
+        private DataGridViewTextBoxColumn descripcion;
+        private DataGridViewTextBoxColumn Existencia;
+        private DataGridViewTextBoxColumn Ventas;
+        private DataGridViewTextBoxColumn precons;
+        private DataGridViewTextBoxColumn prepro;
     }
 }
