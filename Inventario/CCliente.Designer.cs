@@ -50,13 +50,13 @@
             label4 = new Label();
             button1 = new Button();
             button2 = new Button();
-            label5 = new Label();
             label6 = new Label();
             button3 = new Button();
             label7 = new Label();
             label8 = new Label();
             textBox5 = new TextBox();
             textBox6 = new TextBox();
+            button4 = new Button();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)dataGridView2).BeginInit();
             SuspendLayout();
@@ -226,6 +226,7 @@
             button1.TabIndex = 11;
             button1.Text = "Agregar por ID";
             button1.UseVisualStyleBackColor = true;
+            button1.Click += button1_Click;
             // 
             // button2
             // 
@@ -235,24 +236,16 @@
             button2.TabIndex = 12;
             button2.Text = "Agregar por Nombre";
             button2.UseVisualStyleBackColor = true;
-            // 
-            // label5
-            // 
-            label5.AutoSize = true;
-            label5.Location = new Point(450, 673);
-            label5.Name = "label5";
-            label5.Size = new Size(123, 20);
-            label5.TabIndex = 13;
-            label5.Text = "Total de la Venta:";
+            button2.Click += button2_Click;
             // 
             // label6
             // 
             label6.AutoSize = true;
-            label6.Location = new Point(579, 673);
+            label6.Location = new Point(174, 673);
             label6.Name = "label6";
-            label6.Size = new Size(68, 20);
+            label6.Size = new Size(44, 20);
             label6.TabIndex = 14;
-            label6.Text = "$0000.00";
+            label6.Text = "$0.00";
             label6.TextAlign = ContentAlignment.MiddleLeft;
             // 
             // button3
@@ -263,6 +256,7 @@
             button3.TabIndex = 15;
             button3.Text = "Confirmar Venta";
             button3.UseVisualStyleBackColor = true;
+            button3.Click += button3_Click;
             // 
             // label7
             // 
@@ -296,18 +290,28 @@
             textBox6.Size = new Size(276, 27);
             textBox6.TabIndex = 19;
             // 
+            // button4
+            // 
+            button4.Location = new Point(513, 669);
+            button4.Name = "button4";
+            button4.Size = new Size(134, 29);
+            button4.TabIndex = 20;
+            button4.Text = "Reiniciar Venta";
+            button4.UseVisualStyleBackColor = true;
+            button4.Click += button4_Click;
+            // 
             // CCliente
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(659, 718);
+            Controls.Add(button4);
             Controls.Add(textBox6);
             Controls.Add(textBox5);
             Controls.Add(label8);
             Controls.Add(label7);
             Controls.Add(button3);
             Controls.Add(label6);
-            Controls.Add(label5);
             Controls.Add(button2);
             Controls.Add(button1);
             Controls.Add(label4);
@@ -325,6 +329,7 @@
             Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "CCliente";
             Text = "Crear Venta";
+            Load += CCliente_Load;
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
             ((System.ComponentModel.ISupportInitialize)dataGridView2).EndInit();
             ResumeLayout(false);
@@ -354,12 +359,12 @@
         private Label label4;
         private Button button1;
         private Button button2;
-        private Label label5;
         private Label label6;
         private Button button3;
         private Label label7;
         private Label label8;
         private TextBox textBox5;
         private TextBox textBox6;
+        private Button button4;
     }
 }

@@ -18,7 +18,7 @@ namespace Inventario
             InitializeComponent();
         }
 
-        void Refresh() // Removed 'static' keyword  
+        void Refresh()
         {
             SqlConnection con = new SqlConnection("Data Source=localhost;Initial Catalog=Master;Integrated Security=True");
             con.Open();
@@ -26,7 +26,7 @@ namespace Inventario
             SqlCommand comando = new SqlCommand(cadena, con);
             SqlDataReader reader = comando.ExecuteReader();
 
-            dataGridView1.Rows.Clear(); // Fixed CS0120 by making Refresh non-static  
+            dataGridView1.Rows.Clear();
 
             while (reader.Read())
             {
@@ -64,6 +64,7 @@ namespace Inventario
                 comando.ExecuteNonQuery();
                 MessageBox.Show("Producto agregado correctamente");
                 con.Close();
+                Refresh();
             }
             catch (Exception ex)
             {
@@ -92,6 +93,7 @@ namespace Inventario
                 comando.ExecuteNonQuery();
                 MessageBox.Show("Producto eliminado correctamente");
                 con.Close();
+                Refresh();
             }
             catch (Exception ex)
             {
@@ -116,6 +118,7 @@ namespace Inventario
                 comando.ExecuteNonQuery();
                 MessageBox.Show("Producto actualizado");
                 con.Close();
+                Refresh();
             }
             catch (Exception ex)
             {
