@@ -18,7 +18,7 @@ namespace Inventario
             InitializeComponent();
         }
 
-        private void adminis_Load(object sender, EventArgs e)
+        void Refresh() // Removed 'static' keyword  
         {
             SqlConnection con = new SqlConnection("Data Source=localhost;Initial Catalog=Master;Integrated Security=True");
             con.Open();
@@ -26,18 +26,20 @@ namespace Inventario
             SqlCommand comando = new SqlCommand(cadena, con);
             SqlDataReader reader = comando.ExecuteReader();
 
-            dataGridView1.Rows.Clear();
+            dataGridView1.Rows.Clear(); // Fixed CS0120 by making Refresh non-static  
 
             while (reader.Read())
             {
                 object[] values = new object[reader.FieldCount];
                 reader.GetValues(values);
                 dataGridView1.Rows.Add(values);
-
-                //dataGridView1.Rows.Add(String.Format("{0}", reader[0], reader[1], reader[2], reader[3], reader[4], reader[5], reader[6]));
-                //dataGridView1.Rows[dataGridView1.Rows.Count - 1].Cells[0].Value = dataGridView1.Rows.Count;
             }
             con.Close();
+        }
+
+        private void adminis_Load(object sender, EventArgs e)
+        {
+            Refresh();
         }
 
         private void textBox1_TextChanged(object sender, EventArgs e)
@@ -110,7 +112,6 @@ namespace Inventario
                 String precons = textBox5.Text;
                 String prepro = textBox6.Text;
                 String cadena = $"UPDATE Producto SET nombre = '{nombre}', descripcion = '{descripcion}', existencia = '{existencia}', prepro = '{prepro}', precons = '{precons}' WHERE id_producto={id_producto}";
-                //debug MessageBox.Show(cadena);
                 SqlCommand comando = new SqlCommand(cadena, con);
                 comando.ExecuteNonQuery();
                 MessageBox.Show("Producto actualizado");
@@ -126,7 +127,24 @@ namespace Inventario
         {
             SqlConnection con = new SqlConnection("Data Source=localhost;Initial Catalog=Master;Integrated Security=True");
             con.Open();
-            String cadena = "SELECT * FROM Producto";
+
+            String cadena = "";
+
+            if (!string.IsNullOrEmpty(textBox1.Text))
+            {
+                cadena = $"SELECT * FROM Producto WHERE id_producto='{textBox1.Text}'";
+            }
+
+            else if (!string.IsNullOrEmpty(textBox2.Text))
+            {
+                cadena = $"SELECT * FROM Producto WHERE nombre='{textBox2.Text}'";
+            }
+
+            else
+            {
+                cadena = "SELECT * FROM Producto";
+            }
+
             SqlCommand comando = new SqlCommand(cadena, con);
             SqlDataReader reader = comando.ExecuteReader();
 
@@ -139,7 +157,6 @@ namespace Inventario
                 dataGridView1.Rows.Add(values);
             }
             con.Close();
-
         }
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)

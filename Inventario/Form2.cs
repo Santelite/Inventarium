@@ -19,13 +19,17 @@ namespace Inventario
 
         private void button1_Click(object sender, EventArgs e)
         {
-        
+
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
             new adminis().ShowDialog();
-            this.Close();
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

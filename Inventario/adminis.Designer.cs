@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(adminis));
             dataGridView1 = new DataGridView();
             id_producto = new DataGridViewTextBoxColumn();
             nombre = new DataGridViewTextBoxColumn();
@@ -254,7 +255,7 @@
             ver.Name = "ver";
             ver.Size = new Size(171, 29);
             ver.TabIndex = 17;
-            ver.Text = "Actualizar Inventario";
+            ver.Text = "Buscar/Actualizar";
             ver.UseVisualStyleBackColor = true;
             ver.Click += ver_Click;
             // 
@@ -280,8 +281,10 @@
             Controls.Add(button1);
             Controls.Add(textBox1);
             Controls.Add(dataGridView1);
+            FormBorderStyle = FormBorderStyle.FixedSingle;
+            Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "adminis";
-            Text = "adminis";
+            Text = "Administración de Inventario";
             Load += adminis_Load;
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
             ResumeLayout(false);

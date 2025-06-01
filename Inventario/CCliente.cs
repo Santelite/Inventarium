@@ -10,11 +10,16 @@ using System.Windows.Forms;
 
 namespace Inventario
 {
-    public partial class CCliente: Form
+    public partial class CCliente : Form
     {
         public CCliente()
         {
             InitializeComponent();
+        }
+
+        private void label3_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
