@@ -40,9 +40,10 @@
             // button1
             // 
             button1.Font = new Font("Segoe UI", 16.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            button1.ForeColor = SystemColors.ControlText;
             button1.Location = new Point(330, 179);
             button1.Name = "button1";
-            button1.Size = new Size(205, 66);
+            button1.Size = new Size(205, 67);
             button1.TabIndex = 0;
             button1.Text = "Crear Venta\r\n";
             button1.UseVisualStyleBackColor = true;
@@ -53,7 +54,7 @@
             button2.Font = new Font("Segoe UI", 16F);
             button2.Location = new Point(550, 179);
             button2.Name = "button2";
-            button2.Size = new Size(214, 66);
+            button2.Size = new Size(214, 67);
             button2.TabIndex = 1;
             button2.Text = "Inventario";
             button2.UseVisualStyleBackColor = true;
@@ -62,9 +63,9 @@
             // pictureBox1
             // 
             pictureBox1.Image = Properties.Resources.Diseño_sin_título_1_;
-            pictureBox1.Location = new Point(12, 14);
+            pictureBox1.Location = new Point(11, 13);
             pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(256, 258);
+            pictureBox1.Size = new Size(257, 257);
             pictureBox1.TabIndex = 2;
             pictureBox1.TabStop = false;
             pictureBox1.Click += pictureBox1_Click;
@@ -82,7 +83,7 @@
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(604, 92);
+            label2.Location = new Point(609, 92);
             label2.Name = "label2";
             label2.Size = new Size(80, 20);
             label2.TabIndex = 4;
@@ -93,7 +94,7 @@
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.Window;
-            ClientSize = new Size(807, 282);
+            ClientSize = new Size(781, 280);
             Controls.Add(label2);
             Controls.Add(label1);
             Controls.Add(pictureBox1);
