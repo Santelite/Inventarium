@@ -13,4 +13,4 @@
 
 (In)ventarium requiere Windows 7 en adelante con .NET 9.0, también requiere que se configure un MS SQL Server con las credenciales y tablas adecuadas. Por defecto, el programa intentará conectarse a la base de datos `master` utilizando la autentificación de Windows, y sin encriptación SSL. El programa intentará crear las tablas adecuadas automáticamente al establecer una conexión al servidor.
 
-Software creado por Luis Santeliz y presentado al publico bajo la licencia GNU General Public License v3.0 de la Free Software Foundation, Inc.
+La version de lanzamiento de (In)ventarium fue creada por Luis Santeliz y presentado al publico bajo la licencia GNU General Public License v3.0 de la Free Software Foundation, Inc.
